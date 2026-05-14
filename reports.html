@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>التقارير | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-layout">
+  <div id="sidebarMount"></div>
+  <main class="main-content">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <span class="topbar-title">📈 التقارير</span>
+      </div>
+      <div class="topbar-right">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">مستخدم</span>
+        <button onclick="Auth.logout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;">🚪</button>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section-header fade-in">
+        <div><div class="section-title">التقارير الأكاديمية</div><div class="section-subtitle">تقرير كل طالب في كل مادة حسب الدرجات</div></div>
+      </div>
+      <div class="chart-row fade-in-1">
+        <div class="report-card"><div class="card-title">📊 توزيع الدرجات</div><canvas id="distChart" style="max-height:180px;"></canvas></div>
+        <div class="report-card"><div class="card-title">📚 متوسط كل مادة</div><canvas id="avgChart"  style="max-height:180px;"></canvas></div>
+      </div>
+      <div class="filter-bar fade-in-2">
+        <input type="text" id="searchInput" placeholder="🔍 ابحث بالاسم أو الكود...">
+        <select id="secFilter">
+          <option value="0">كل السكاشن</option>
+          <option value="1">Section 1</option><option value="2">Section 2</option>
+          <option value="3">Section 3</option><option value="4">Section 4</option>
+          <option value="5">Section 5</option><option value="6">Section 6</option>
+          <option value="7">Section 7</option><option value="8">Section 8</option>
+        </select>
+        <select id="subjFilter">
+          <option value="">كل المواد</option>
+          <option value="Cloud">Cloud Computing</option>
+          <option value="Web">Web Development</option>
+          <option value="Data">Data Mining</option>
+          <option value="Algo">Algorithm Design</option>
+          <option value="English">Technical English</option>
+          <option value="IoT">IoT</option>
+        </select>
+      </div>
+      <p id="countLabel" style="font-size:12px;color:var(--muted);margin-bottom:12px;"></p>
+      <div id="reportsList" class="fade-in-3"></div>
+    </div>
+  </main>
+</div>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>

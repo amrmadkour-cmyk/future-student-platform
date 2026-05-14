@@ -1,0 +1,34 @@
+/* ============================================================
+   settings.css — Future Students | Settings Page Styles
+   ============================================================ */
+
+.set-card  { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:14px; }
+.set-title { font-size:14px; font-weight:800; color:var(--acc2); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:7px; }
+
+.themes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(82px,1fr)); gap:10px; }
+.theme-btn   { border:2px solid transparent; border-radius:12px; overflow:hidden; cursor:pointer; background:none; padding:0; transition:all .3s; text-align:center; }
+.theme-btn.active,
+.theme-btn:hover { border-color:var(--acc); transform:scale(1.06); box-shadow:var(--glow-a); }
+.theme-prev  { height:48px; border-radius:9px 9px 0 0; display:flex; align-items:center; justify-content:center; font-size:18px; }
+.theme-label { font-size:10px; font-weight:700; padding:5px 3px; background:rgba(255,255,255,.05); color:var(--muted); font-family:'Cairo',sans-serif; line-height:1.3; }
+.theme-btn.active .theme-label { color:var(--acc2); }
+
+.set-row      { display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid rgba(36,81,160,.1); }
+.set-row:last-child { border-bottom:none; }
+.set-lbl { font-size:13px; font-weight:600; color:var(--text); }
+.set-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+
+.toggle     { width:42px; height:23px; border-radius:12px; background:rgba(255,255,255,.08); border:1px solid var(--border); position:relative; cursor:pointer; transition:all .3s; flex-shrink:0; }
+.toggle.on  { background:linear-gradient(135deg,var(--p2),var(--acc)); }
+.t-dot      { width:17px; height:17px; border-radius:50%; background:#fff; position:absolute; top:2px; right:2px; transition:all .3s; box-shadow:0 2px 5px rgba(0,0,0,.3); }
+.toggle.on .t-dot { transform:translateX(-19px); }
+
+.danger-zone  { background:rgba(255,82,82,.05); border:1px solid rgba(255,82,82,.18); border-radius:12px; padding:16px; }
+.danger-title { font-size:13px; font-weight:800; color:#ff5252; margin-bottom:12px; display:flex; align-items:center; gap:6px; }
+.d-btn        { padding:8px 16px; background:rgba(255,82,82,.1); border:1px solid rgba(255,82,82,.25); border-radius:9px; color:#ff5252; font-family:'Cairo',sans-serif; font-size:12px; font-weight:700; cursor:pointer; transition:all .3s; margin-left:8px; margin-bottom:6px; }
+.d-btn:hover  { background:rgba(255,82,82,.2); }
+
+@media(max-width:480px) {
+  .themes-grid { grid-template-columns:repeat(auto-fill,minmax(70px,1fr)); gap:8px; }
+  .theme-prev  { height:40px; font-size:16px; }
+}

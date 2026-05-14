@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>الإعدادات | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+<div class="app-layout">
+  <div id="sidebarMount"></div>
+  <main class="main-content">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <span class="topbar-title">⚙️ الإعدادات</span>
+      </div>
+      <div class="topbar-right">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">مستخدم</span>
+        <button onclick="Auth.logout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;">🚪</button>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section-header fade-in">
+        <div><div class="section-title">الإعدادات</div><div class="section-subtitle">تخصيص المظهر والإعدادات</div></div>
+      </div>
+      <!-- THEMES -->
+      <div class="set-card fade-in-1">
+        <div class="set-title">🎨 الثيم اللوني — يتغير في كل الصفحات فوراً</div>
+        <div class="themes-grid" id="themesGrid"></div>
+      </div>
+      <!-- GENERAL -->
+      <div class="set-card fade-in-2">
+        <div class="set-title">⚙️ إعدادات عامة</div>
+        <div class="set-row">
+          <div><div class="set-lbl">الأنيميشن والحركة</div><div class="set-sub">تأثيرات الحركة عند التنقل</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"><div class="t-dot"></div></div>
+        </div>
+        <div class="set-row">
+          <div><div class="set-lbl">حجم الخط</div><div class="set-sub">اختر حجم مناسب لك</div></div>
+          <select class="input-field" style="width:auto;padding:7px 12px;" id="fontSizeSel">
+            <option value="15px">عادي</option>
+            <option value="17px">كبير</option>
+            <option value="13px">صغير</option>
+          </select>
+        </div>
+        <div class="set-row">
+          <div><div class="set-lbl">الوضع الليلي</div><div class="set-sub">خلفية داكنة (افتراضي)</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"><div class="t-dot"></div></div>
+        </div>
+      </div>
+      <!-- DANGER -->
+      <div class="set-card fade-in-3">
+        <div class="danger-zone">
+          <div class="danger-title">⚠️ منطقة الخطر</div>
+          <button class="d-btn" onclick="clearData()">🗑️ مسح البيانات المحلية</button>
+          <button class="d-btn" onclick="Auth.logout()">🚪 تسجيل الخروج</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="globalToast" class="toast"></div>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

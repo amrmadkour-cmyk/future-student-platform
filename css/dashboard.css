@@ -1,0 +1,26 @@
+/* ============================================================
+   dashboard.css — Future Students | Dashboard Styles
+   ============================================================ */
+
+.welcome-banner {
+  background: linear-gradient(135deg, rgba(26,58,107,.7), rgba(36,81,160,.4));
+  border: 1px solid var(--border-acc);
+  border-radius: 14px;
+  padding: clamp(14px,3vw,20px) clamp(14px,3vw,22px);
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.welcome-banner::after {
+  content: '📊';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  font-size: 70px;
+  opacity: .06;
+}
+.welcome-name {
+  font-size: clamp(15px,3.5vw,21px);
+  font-weight: 900;
+  color: #fff;
+}

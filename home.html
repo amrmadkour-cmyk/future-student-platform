@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Future Students | HITU — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div id="particlesWrap"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-brand">
+    <img src="assets/logo.jpg" class="nav-logo" alt="HITU">
+    <span class="nav-title">FUTURE STUDENTS</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about"     class="nav-link">عن المنصة</a>
+    <a href="#team"      class="nav-link">الفريق</a>
+    <a href="#subjects"  class="nav-link">المواد</a>
+    <a href="login.html" class="nav-link nav-cta">ابدأ الآن ←</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="assets/logo.jpg" class="hero-logo" alt="HITU">
+  <p class="hero-uni">HELWAN INT'L TECHNOLOGICAL UNIVERSITY — HITU</p>
+  <div class="hero-title">
+    <div class="future">FUTURE</div>
+    <div class="students">STUDENTS</div>
+  </div>
+  <p class="hero-sub">بوابتك الأكاديمية الذكية — CS Department</p>
+  <div class="divider"></div>
+  <p class="hero-quote">
+    حيث <span class="hl">التعلم يلتقي بالتكنولوجيا</span> — منصة أكاديمية متكاملة<br>
+    تجمع طلاب قسم علوم الحاسب في رحلة واحدة نحو المستقبل 🚀
+  </p>
+  <div class="typing-wrap"><span id="typingText"></span><span class="cursor"></span></div>
+  <div class="hero-btns">
+    <a href="login.html" class="btn-main primary"><span>🚀 ابدأ رحلتك الآن</span></a>
+    <a href="#about"     class="btn-main secondary"><span>اعرف المزيد ↓</span></a>
+  </div>
+  <div class="scroll-hint">
+    <span>اسحب للأسفل</span>
+    <span class="scroll-arrow">▼</span>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar reveal">
+  <div class="stat-item"><div class="stat-num" data-target="312">0</div><div class="stat-lbl">طالب مسجل</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="6">0</div><div class="stat-lbl">مادة دراسية</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="8">0</div><div class="stat-lbl">سكشن</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="24">0</div><div class="stat-lbl">مهارة مقترحة</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="1">0</div><div class="stat-lbl">مطوّرة المشروع</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-head reveal">
+    <div class="section-label">عن المنصة</div>
+    <div class="section-title">لماذا Future Students؟</div>
+    <p class="section-sub">منصة تعليمية متكاملة تم تصميمها خصيصاً لطلاب قسم علوم الحاسب</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>منصة <span class="hl">Future Students</span> هي بوابتك الأكاديمية الذكية التي صُممت لتوفير تجربة تعليمية متكاملة لطلاب قسم علوم الحاسب في جامعة حلوان التكنولوجية الدولية.</p>
+      <p>من خلال المنصة يمكنك متابعة <span class="hl">مواد دراسية متنوعة</span>، الاطلاع على أسماء زملائك، تطوير مهاراتك التقنية، ومتابعة أدائك الأكاديمي — كل ذلك في مكان واحد.</p>
+      <div class="about-features">
+        <div class="feature-item">📚 6 مواد دراسية متكاملة</div>
+        <div class="feature-item">👥 312 طالب مسجل</div>
+        <div class="feature-item">🤖 مساعد AI ذكي</div>
+        <div class="feature-item">⚡ 24 مهارة مقترحة</div>
+        <div class="feature-item">📊 تقارير أداء تفصيلية</div>
+        <div class="feature-item">🎨 13 ثيم لوني</div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-circle">
+        <div class="about-circle-inner">🎓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-head reveal" style="text-align:center;">
+    <div class="section-label">المطوّرة</div>
+    <div class="section-title">مطوّرة النظام</div>
+  </div>
+  <div style="display:flex;justify-content:center;">
+    <div class="team-card reveal" style="max-width:320px;width:100%;">
+      <div class="team-avatar">👩‍💻</div>
+      <div class="team-name">إيمان عيد السيد</div>
+      <div class="team-role">System Developer — Full Stack</div>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,168,76,.15);font-size:12px;color:rgba(201,168,76,.6);line-height:1.8;">
+        تصميم وتطوير منصة Future Students<br>
+        جامعة حلوان التكنولوجية الدولية — HITU
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section id="subjects">
+  <div class="section-head reveal" style="text-align:center;">
+    <div class="section-label">المواد الدراسية</div>
+    <div class="section-title">ماذا ستتعلم؟</div>
+    <p class="section-sub" style="margin:0 auto;">6 مواد أساسية في قسم علوم الحاسب مع فيديوهات مقترحة</p>
+  </div>
+  <div class="subjects-row" id="subjectsRow"></div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-title">جاهزة تبدأي رحلتك؟<br><span>سجّلي الآن مجاناً</span></div>
+    <p class="cta-sub">انضمي لمنصة Future Students واستمتعي بتجربة أكاديمية ذكية ومتكاملة</p>
+    <a href="login.html" class="btn-main primary" style="display:inline-flex;"><span>🚀 ابدأي الآن</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="assets/logo.jpg" class="footer-logo" alt="HITU">
+    <span class="footer-name">FUTURE STUDENTS</span>
+  </div>
+  <p class="footer-copy">© 2025 Future Students — HITU CS Department. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="login.html" class="footer-link">دخول</a>
+    <a href="#team"      class="footer-link">الفريق</a>
+    <a href="#subjects"  class="footer-link">المواد</a>
+  </div>
+</footer>
+
+<script src="js/home.js"></script>
+</body>
+</html>

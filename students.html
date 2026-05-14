@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>الطلاب | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/students.css">
+</head>
+<body>
+<div class="app-layout">
+  <div id="sidebarMount"></div>
+  <main class="main-content">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <span class="topbar-title">👥 الطلاب</span>
+      </div>
+      <div class="topbar-right">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">مستخدم</span>
+        <button onclick="Auth.logout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;">🚪</button>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section-header fade-in">
+        <div><div class="section-title">الطلاب</div><div class="section-subtitle">312 طالب — 8 سكاشن</div></div>
+      </div>
+      <div class="filter-bar fade-in-1">
+        <input type="text" class="input-field" id="searchInput" placeholder="🔍 ابحث بالاسم أو الكود...">
+      </div>
+      <div class="sec-tabs fade-in-2" id="secTabs"></div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;" id="countLabel"></p>
+      <div class="table-wrap fade-in-3">
+        <table class="data-table">
+          <thead><tr><th>#</th><th>الاسم</th><th>الكود</th><th>Section</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/students.js"></script>
+</body>
+</html>

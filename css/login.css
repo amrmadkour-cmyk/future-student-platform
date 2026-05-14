@@ -1,0 +1,139 @@
+/* ============================================================
+   login.css — Future Students | Login Page Styles
+   ============================================================ */
+
+:root {
+  --p1:#1a3a6b; --p2:#2451a0; --acc:#c9a84c; --acc2:#e8c96a;
+  --bg:#040c1e; --card:rgba(13,27,53,.92); --text:#f0f4ff;
+  --muted:#8a9cc0; --border:rgba(36,81,160,.35); --bacc:rgba(201,168,76,.3);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  direction:rtl;
+  padding:16px;
+  overflow-x:hidden;
+}
+
+#bgCanvas { position:fixed; inset:0; z-index:0; pointer-events:none; }
+
+/* CARD */
+.wrap {
+  position:relative; z-index:10;
+  width:100%; max-width:420px;
+  animation:up .5s ease both;
+}
+@keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+.card {
+  background:var(--card);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--bacc);
+  border-radius:22px;
+  padding:clamp(20px,5vw,34px) clamp(16px,5vw,30px);
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.logo {
+  width:clamp(54px,12vw,68px);
+  height:clamp(54px,12vw,68px);
+  object-fit:contain;
+  display:block;
+  margin:0 auto 10px;
+  filter:drop-shadow(0 0 14px rgba(201,168,76,.6));
+}
+
+h1 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(14px,4vw,19px);
+  font-weight:900;
+  text-align:center;
+  background:linear-gradient(135deg,var(--acc2),var(--acc));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  letter-spacing:2px;
+  margin-bottom:3px;
+}
+
+.sub { font-size:11px; color:var(--muted); text-align:center; margin-bottom:18px; }
+.divider { height:1px; background:linear-gradient(90deg,transparent,var(--bacc),transparent); margin:0 0 18px; }
+
+/* TABS */
+.tabs {
+  display:grid; grid-template-columns:1fr 1fr; gap:6px;
+  background:rgba(26,58,107,.2); border-radius:12px;
+  padding:4px; margin-bottom:18px;
+}
+.tab {
+  padding:9px; border:none; border-radius:9px;
+  font-family:'Cairo',sans-serif; font-size:13px; font-weight:700;
+  cursor:pointer; background:transparent; color:var(--muted); transition:all .3s;
+}
+.tab.active {
+  background:linear-gradient(135deg,var(--p2),var(--p1));
+  color:#fff; box-shadow:0 4px 14px rgba(36,81,160,.4);
+}
+
+/* FORM */
+.form-sec { display:none; }
+.form-sec.active { display:block; }
+.ig { margin-bottom:13px; }
+.il { display:block; font-size:12px; font-weight:600; color:var(--muted); margin-bottom:5px; }
+.iw { position:relative; }
+.ii { position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px; color:var(--muted); pointer-events:none; }
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width:100%; padding:10px 38px 10px 13px;
+  background:rgba(26,58,107,.25); border:1px solid var(--border);
+  border-radius:10px; color:var(--text); font-family:'Cairo',sans-serif;
+  font-size:13px; outline:none; transition:all .3s; -webkit-appearance:none;
+}
+input:focus { border-color:var(--acc); box-shadow:0 0 0 3px rgba(201,168,76,.12); }
+input::placeholder { color:rgba(138,156,192,.4); }
+
+/* REMEMBER ME */
+.rem { display:flex; align-items:center; gap:8px; margin-bottom:14px; cursor:pointer; user-select:none; }
+.rem input { width:15px; height:15px; accent-color:var(--acc); cursor:pointer; }
+.rem span { font-size:12px; color:var(--muted); }
+
+/* SUBMIT BUTTON */
+.sbtn {
+  width:100%; padding:12px;
+  background:linear-gradient(135deg,var(--p2),var(--p1));
+  color:#fff; border:2px solid var(--acc); border-radius:11px;
+  font-family:'Cairo',sans-serif; font-size:14px; font-weight:700;
+  cursor:pointer; transition:all .3s; position:relative; overflow:hidden;
+}
+.sbtn::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,var(--acc),#a07830); opacity:0; transition:opacity .3s; }
+.sbtn:hover::before { opacity:1; }
+.sbtn:hover { color:var(--p1); transform:translateY(-1px); }
+.sbtn span { position:relative; z-index:1; }
+
+/* MESSAGES */
+.err { background:rgba(255,80,80,.12); border:1px solid rgba(255,80,80,.3); border-radius:9px; padding:8px 12px; font-size:12px; color:#ff8a8a; margin-bottom:12px; display:none; }
+.ok-msg { background:rgba(0,200,100,.1); border:1px solid rgba(0,200,100,.3); border-radius:9px; padding:8px 12px; font-size:12px; color:#5eebb8; margin-bottom:12px; display:none; }
+
+/* BACK LINK */
+.bk { text-align:center; margin-top:14px; font-size:12px; color:var(--muted); }
+.bk a { color:var(--acc); cursor:pointer; }
+
+/* HINT */
+.hint { background:rgba(36,81,160,.15); border:1px solid var(--border); border-radius:9px; padding:10px 12px; font-size:11px; color:var(--muted); margin-top:12px; line-height:1.7; }
+.hint strong { color:var(--acc2); }
+
+/* MOBILE */
+@media(max-width:400px) {
+  .card { border-radius:16px; }
+  .tab { font-size:12px; padding:8px; }
+}

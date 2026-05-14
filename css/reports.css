@@ -1,0 +1,36 @@
+/* ============================================================
+   reports.css — Future Students | Reports Page Styles
+   ============================================================ */
+
+.filter-bar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+.filter-bar input,
+.filter-bar select { padding:9px 13px; background:var(--card); border:1px solid var(--border); border-radius:9px; color:var(--text); font-family:'Cairo',sans-serif; font-size:13px; outline:none; transition:all .3s; }
+.filter-bar input:focus,
+.filter-bar select:focus { border-color:var(--acc); }
+.filter-bar input { flex:1; min-width:160px; }
+
+.chart-row   { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
+.report-card { background:var(--card); border:1px solid var(--border); border-radius:13px; padding:14px; }
+
+.perf-bar-wrap { width:80px; height:7px; background:rgba(255,255,255,.07); border-radius:4px; overflow:hidden; display:inline-block; }
+.perf-fill     { height:100%; border-radius:4px; }
+
+.student-card       { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; margin-bottom:10px; transition:all .3s; }
+.student-card:hover { border-color:var(--acc); box-shadow:var(--glow-a); }
+.student-header     { display:flex; align-items:center; gap:10px; margin-bottom:10px; cursor:pointer; }
+.s-avatar  { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--p2),var(--acc)); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; color:#fff; flex-shrink:0; }
+.s-name    { font-size:13px; font-weight:700; color:var(--text); }
+.s-meta    { font-size:11px; color:var(--muted); }
+.s-avg     { margin-right:auto; font-size:18px; font-weight:900; }
+
+.subject-rows { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; padding-top:8px; border-top:1px solid var(--border); }
+.subj-row     { display:flex; align-items:center; gap:8px; padding:7px 10px; background:var(--card2); border-radius:9px; font-size:12px; }
+.subj-grade   { font-weight:900; font-size:15px; margin-right:auto; }
+
+.toggle-arrow          { transition:transform .3s; }
+.expanded .toggle-arrow { transform:rotate(180deg); }
+
+@media(max-width:600px) {
+  .chart-row    { grid-template-columns:1fr; }
+  .subject-rows { grid-template-columns:1fr; }
+}

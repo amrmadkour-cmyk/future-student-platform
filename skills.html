@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>المهارات | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+<div class="app-layout">
+  <div id="sidebarMount"></div>
+  <main class="main-content">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <span class="topbar-title">⚡ المهارات</span>
+      </div>
+      <div class="topbar-right">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">مستخدم</span>
+        <button onclick="Auth.logout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;">🚪</button>
+      </div>
+    </header>
+    <div class="page-content">
+      <div class="section-header fade-in">
+        <div><div class="section-title">المهارات المقترحة</div><div class="section-subtitle">مرتبة حسب مستوى الخبرة</div></div>
+      </div>
+      <div class="level-tabs fade-in-1">
+        <button class="lvl-tab all active" onclick="filterLevel('all',this)">🌟 الكل</button>
+        <button class="lvl-tab b"          onclick="filterLevel('b',this)">🟢 مبتدئ</button>
+        <button class="lvl-tab i"          onclick="filterLevel('i',this)">🟡 متوسط</button>
+        <button class="lvl-tab a"          onclick="filterLevel('a',this)">🔴 متقدم</button>
+      </div>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </main>
+</div>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

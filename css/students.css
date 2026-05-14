@@ -1,0 +1,13 @@
+/* ============================================================
+   students.css — Future Students | Students Page Styles
+   ============================================================ */
+
+.sec-tabs { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:16px; }
+.sec-tab  { padding:7px 14px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); font-family:'Cairo',sans-serif; font-size:12px; font-weight:700; cursor:pointer; transition:all .3s; }
+.sec-tab.active, .sec-tab:hover { background:linear-gradient(135deg,var(--p2),var(--p1)); color:#fff; border-color:var(--acc); }
+.filter-bar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+.filter-bar input { flex:1; min-width:160px; }
+
+@media(max-width:480px) {
+  .sec-tab { padding:6px 10px; font-size:11px; }
+}

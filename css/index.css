@@ -1,0 +1,155 @@
+/* ============================================================
+   index.css — Future Students | Landing Page Styles
+   ============================================================ */
+
+:root {
+  --royal-blue: #1a3a6b;
+  --royal-blue-light: #2451a0;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --bg-dark: #040c1e;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg-dark);
+  color: #f0f4ff;
+  min-height: 100vh;
+  overflow: hidden;
+  direction: rtl;
+}
+
+#bgCanvas { position:fixed; inset:0; z-index:0; }
+
+.scan-line {
+  position: fixed; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+  animation: scanDown 6s linear infinite;
+  /* pointer-events: none; z-index:5; */
+}
+@keyframes scanDown {
+  0%   { top:0; opacity:0; }
+  5%   { opacity:1; }
+  95%  { opacity:1; }
+  100% { top:100vh; opacity:0; }
+}
+
+.particles { position:fixed; inset:0; z-index:1; pointer-events:none; }
+.particle  {
+  position: absolute; border-radius:50%;
+  animation: floatP var(--dur) ease-in-out infinite; opacity:0;
+}
+@keyframes floatP {
+  0%   { opacity:0; transform:translateY(0) rotate(0deg); }
+  20%  { opacity:var(--op); }
+  80%  { opacity:var(--op); }
+  100% { opacity:0; transform:translateY(-80px) rotate(360deg); }
+}
+
+.corner-deco { position:fixed; width:220px; height:220px; opacity:0.07; pointer-events:none; }
+.corner-deco.tr { top:-40px; right:-40px; }
+.corner-deco.bl { bottom:-40px; left:-40px; transform:rotate(180deg); }
+
+.landing {
+  position: relative; z-index:10; min-height:100vh;
+  display: flex; flex-direction:column; align-items:center;
+  justify-content:center; padding:30px 20px; gap:4px;
+}
+
+.logo-wrap { margin-bottom:8px; opacity:0; animation:dropIn .8s cubic-bezier(.34,1.56,.64,1) .3s forwards; }
+.logo-wrap img { width:90px; height:90px; object-fit:contain; filter:drop-shadow(0 0 20px rgba(201,168,76,0.7)); }
+@keyframes dropIn {
+  from { opacity:0; transform:translateY(-40px) scale(0.8); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+
+.uni-tag {
+  font-size:11px; color:rgba(201,168,76,0.6); text-align:center;
+  letter-spacing:2px; opacity:0;
+  animation:up .6s ease .5s forwards;
+  font-family:'Orbitron',sans-serif;
+}
+
+.main-title { text-align:center; opacity:0; animation:up .8s ease .8s forwards; margin:10px 0 2px; line-height:1; }
+
+.future-text {
+  font-family:'Orbitron',sans-serif;
+  font-size: clamp(42px, 9vw, 90px);
+  font-weight:900; letter-spacing:8px;
+  background: linear-gradient(135deg,#e8c96a 0%,#c9a84c 30%,#7eb3ff 60%,#2451a0 80%,#e8c96a 100%);
+  background-size:300%;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  animation:grd 5s ease infinite 1.5s;
+}
+.students-text {
+  font-family:'Orbitron',sans-serif;
+  font-size: clamp(42px, 9vw, 90px);
+  font-weight:900; letter-spacing:8px;
+  background: linear-gradient(135deg,#2451a0 0%,#7eb3ff 40%,#e8c96a 70%,#c9a84c 100%);
+  background-size:300%;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  animation:grd2 5s ease infinite 1.5s;
+}
+@keyframes grd  { 0%{background-position:0% 50%}   50%{background-position:100% 50%}  100%{background-position:0% 50%} }
+@keyframes grd2 { 0%{background-position:100% 50%} 50%{background-position:0% 50%}   100%{background-position:100% 50%} }
+
+.arabic-sub { font-size:clamp(12px,1.8vw,16px); color:rgba(201,168,76,0.65); text-align:center; letter-spacing:3px; margin-top:8px; }
+
+.divider {
+  width:0; height:2px; margin:14px auto;
+  background: linear-gradient(90deg,transparent,var(--gold),#7eb3ff,var(--gold),transparent);
+  animation: expW 1s ease 1.3s forwards; border-radius:2px;
+}
+@keyframes expW { to { width:380px; } }
+
+.motiv { text-align:center; opacity:0; animation:up .8s ease 1.5s forwards; margin-bottom:18px; }
+.motiv-text { font-size:clamp(13px,2vw,18px); font-weight:600; color:#c8d8ff; line-height:1.8; max-width:620px; margin:0 auto; }
+.hl { color:var(--gold-light); font-weight:700; }
+
+.typing-line { font-size:clamp(12px,1.6vw,15px); color:rgba(201,168,76,0.75); margin-top:10px; min-height:24px; }
+.cursor {
+  display:inline-block; width:2px; height:1em;
+  background:var(--gold); margin-right:2px; vertical-align:middle;
+  animation:blink .8s step-end infinite;
+}
+@keyframes blink { 50% { opacity:0; } }
+
+.btn-wrap { opacity:0; animation:up .8s ease 2s forwards; margin-bottom:24px; }
+.enter-btn {
+  padding:14px 44px;
+  background: linear-gradient(135deg,var(--royal-blue-light),var(--royal-blue));
+  color:white; border:2px solid var(--gold); border-radius:50px;
+  font-family:'Cairo',sans-serif; font-size:16px; font-weight:700;
+  cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:12px;
+  transition:all .3s; position:relative; overflow:hidden;
+  box-shadow:0 8px 30px rgba(26,58,107,0.5);
+}
+.enter-btn::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,var(--gold),var(--gold-light)); opacity:0; transition:opacity .3s; }
+.enter-btn:hover::before { opacity:1; }
+.enter-btn:hover { color:var(--royal-blue); box-shadow:0 12px 40px rgba(201,168,76,0.45); transform:translateY(-3px); }
+.enter-btn span, .btn-icon { position:relative; z-index:1; }
+.btn-icon { font-size:18px; transition:transform .3s; }
+.enter-btn:hover .btn-icon { transform:translateX(-6px); }
+
+.team-section { opacity:0; animation:up .8s ease 2.3s forwards; text-align:center; }
+.dev-wrap      { display:inline-flex; align-items:center; gap:0; border-radius:40px; overflow:hidden; border:1px solid rgba(201,168,76,0.4); box-shadow:0 0 20px rgba(201,168,76,0.12); }
+.dev-label     { padding:9px 18px; background:linear-gradient(135deg,#1a3a6b,#2451a0); color:rgba(201,168,76,0.85); font-size:12px; font-weight:700; letter-spacing:1px; font-family:'Orbitron',sans-serif; white-space:nowrap; }
+.dev-sep       { width:1px; background:rgba(201,168,76,0.3); align-self:stretch; }
+.dev-name-val  { padding:9px 20px; background:rgba(26,58,107,0.25); color:#e8c96a; font-size:14px; font-weight:800; letter-spacing:1px; white-space:nowrap; }
+
+@keyframes up { from{opacity:0;transform:translateY(25px)} to{opacity:1;transform:translateY(0)} }
+
+@media(max-width:480px) {
+  .landing       { padding:20px 14px; gap:2px; }
+  .logo-wrap img { width:70px; height:70px; }
+  .future-text, .students-text { letter-spacing:4px; }
+  .divider       { animation:none; width:260px; }
+  .enter-btn     { padding:12px 28px; font-size:14px; }
+  .btn-wrap      { margin-bottom:16px; }
+  .motiv-text    { font-size:13px; }
+  .dev-label     { font-size:10px; padding:8px 13px; }
+  .dev-name-val  { font-size:13px; padding:8px 14px; }
+}

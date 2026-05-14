@@ -1,0 +1,86 @@
+/* ============================================================
+   my-dashboard.css — Future Students | Student Dashboard Styles
+   ============================================================ */
+
+/* Code Modal */
+.code-modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(10px);
+  z-index: 500;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.code-card {
+  background: var(--card);
+  border: 1px solid var(--border-acc);
+  border-radius: 18px;
+  padding: 28px 24px;
+  width: 100%; max-width: 380px;
+  animation: up .35s ease both;
+}
+@keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.code-title { font-size:17px; font-weight:900; color:var(--acc2); text-align:center; margin-bottom:4px; }
+.code-sub   { font-size:12px; color:var(--muted); text-align:center; margin-bottom:20px; }
+.code-err   { background:rgba(255,80,80,.12); border:1px solid rgba(255,80,80,.3); border-radius:8px; padding:8px 12px; font-size:12px; color:#ff8a8a; margin-bottom:12px; display:none; }
+
+/* Info Banner */
+.info-banner {
+  background: linear-gradient(135deg, rgba(26,58,107,.8), rgba(36,81,160,.5));
+  border: 1px solid var(--border-acc);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.info-avatar {
+  width:54px; height:54px; border-radius:50%;
+  background: linear-gradient(135deg, var(--p2), var(--acc));
+  display: flex; align-items: center; justify-content: center;
+  font-size:22px; font-weight:900; color:#fff;
+  border: 2px solid var(--acc); flex-shrink:0;
+}
+.info-text .info-name { font-size: clamp(14px,3vw,18px); font-weight:900; color:#fff; }
+.info-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:5px; }
+.info-tag  { padding:3px 10px; background:rgba(201,168,76,.12); border:1px solid var(--border-acc); border-radius:20px; font-size:11px; color:var(--acc2); }
+
+/* Grade Cards */
+.grades-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; margin-bottom:16px; }
+.grade-card  { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; transition:all .3s; position:relative; overflow:hidden; }
+.grade-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.gA::before { background:linear-gradient(90deg,#00e676,#69f0ae); }
+.gB::before { background:linear-gradient(90deg,#7eb3ff,#4fc3f7); }
+.gC::before { background:linear-gradient(90deg,var(--acc),var(--acc2)); }
+.gD::before { background:linear-gradient(90deg,#ff9800,#ffc107); }
+.gF::before { background:linear-gradient(90deg,#ff5252,#ff1744); }
+.grade-card:hover { transform:translateY(-3px); box-shadow:var(--glow-a); }
+.g-subj   { font-size:13px; font-weight:800; color:var(--text); margin-bottom:7px; }
+.g-num    { font-size:30px; font-weight:900; line-height:1; }
+.g-bar    { height:6px; background:rgba(255,255,255,.08); border-radius:3px; margin-top:9px; overflow:hidden; }
+.g-fill   { height:100%; border-radius:3px; }
+.g-status { font-size:11px; font-weight:700; margin-top:5px; }
+
+/* Classmates */
+.classmates-list { max-height:220px; overflow-y:auto; }
+.cm-item { display:flex; align-items:center; gap:9px; padding:7px 10px; border-bottom:1px solid var(--border); font-size:12px; }
+.cm-item.me { background:rgba(201,168,76,.08); border-radius:8px; }
+.cm-me-tag { font-size:10px; color:var(--acc); margin-right:auto; flex-shrink:0; }
+
+/* Empty State */
+.empty-state { text-align:center; padding:36px 16px; color:var(--muted); }
+.empty-icon  { font-size:48px; margin-bottom:12px; }
+
+/* Change Student Button */
+.logout-code {
+  background:rgba(255,82,82,.1); border:1px solid rgba(255,82,82,.2);
+  border-radius:9px; padding:7px 16px; color:#ff5252;
+  font-family:'Cairo',sans-serif; font-size:12px; font-weight:700;
+  cursor:pointer; transition:all .3s;
+}
+.logout-code:hover { background:rgba(255,82,82,.2); }
+
+/* Mobile */
+@media(max-width:480px) {
+  .grades-grid { grid-template-columns:1fr 1fr; }
+  .info-banner { gap:10px; }
+}

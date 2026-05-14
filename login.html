@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>تسجيل الدخول | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="wrap">
+  <div class="card">
+    <img src="assets/logo.jpg" class="logo" alt="HITU">
+    <h1>FUTURE STUDENTS</h1>
+    <p class="sub">جامعة حلوان التكنولوجية الدولية — CS</p>
+    <div class="divider"></div>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('login')">تسجيل الدخول</button>
+      <button class="tab"        onclick="switchTab('register')">حساب جديد</button>
+    </div>
+    <!-- LOGIN -->
+    <div class="form-sec active" id="loginSec">
+      <div id="loginErr" class="err"></div>
+      <div class="ig">
+        <label class="il">البريد الإلكتروني</label>
+        <div class="iw"><span class="ii">📧</span><input type="email" id="lEmail" placeholder="example@email.com" autocomplete="email"></div>
+      </div>
+      <div class="ig">
+        <label class="il">كلمة المرور</label>
+        <div class="iw"><span class="ii">🔒</span><input type="password" id="lPass" placeholder="كلمة المرور" autocomplete="current-password"></div>
+      </div>
+      <label class="rem">
+        <input type="checkbox" id="lRemember" checked>
+        <span>تذكرني — لا تطلب مني الدخول مجدداً</span>
+      </label>
+      <button class="sbtn" onclick="doLogin()"><span>دخول ←</span></button>
+    </div>
+    <!-- REGISTER -->
+    <div class="form-sec" id="registerSec">
+      <div id="regErr" class="err"></div>
+      <div id="regOk" class="ok-msg"></div>
+      <div class="ig">
+        <label class="il">الاسم الكامل</label>
+        <div class="iw"><span class="ii">👤</span><input type="text" id="rName" placeholder="اسمك الكامل"></div>
+      </div>
+      <div class="ig">
+        <label class="il">البريد الإلكتروني</label>
+        <div class="iw"><span class="ii">📧</span><input type="email" id="rEmail" placeholder="example@email.com" autocomplete="email"></div>
+      </div>
+      <div class="ig">
+        <label class="il">كلمة المرور</label>
+        <div class="iw"><span class="ii">🔒</span><input type="password" id="rPass" placeholder="اختر أي كلمة مرور" autocomplete="new-password"></div>
+      </div>
+      <button class="sbtn" onclick="doRegister()"><span>إنشاء الحساب ←</span></button>
+    </div>
+    <div class="hint">
+      💡 بعد الدخول ستجد زر <strong>«داش بورد الطالب»</strong><br>
+      أدخل <strong>كود الطالب</strong> لترى درجاتك الشخصية.
+    </div>
+    <div class="bk"><a href="home.html">← العودة للصفحة الرئيسية</a></div>
+  </div>
+</div>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

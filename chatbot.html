@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>AI Chatbot | Future Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+<div class="app-layout">
+  <div id="sidebarMount"></div>
+  <main class="main-content">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="hamburger" id="hamburgerBtn">☰</button>
+        <span class="topbar-title">🤖 AI Chatbot</span>
+      </div>
+      <div class="topbar-right">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <span class="user-name" id="userName">مستخدم</span>
+        <button onclick="Auth.logout()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;">🚪</button>
+      </div>
+    </header>
+    <div class="page-content" style="height:calc(100vh - 68px);overflow:hidden;padding:14px;">
+      <div class="chat-wrap">
+
+        <!-- CHAT MAIN -->
+        <div class="chat-main">
+          <div class="chat-head">
+            <div class="bot-av">🤖</div>
+            <div>
+              <div class="bot-name">Future AI Assistant</div>
+              <div class="bot-status">متصل الآن</div>
+            </div>
+          </div>
+          <div class="chat-msgs" id="chatMsgs">
+            <div class="msg bot">
+              <div class="msg-av">🤖</div>
+              <div>
+                <div class="msg-bubble">أهلاً! أنا مساعدك الذكي في Future Students 🎓<br>يمكنني مساعدتك في شرح المواد الدراسية، الإجابة على أسئلتك التقنية، ونصائح للدراسة.<br><br>اكتب سؤالك وأنا جاهز! 💡</div>
+                <div class="msg-time">الآن</div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <textarea class="chat-input" id="chatInput" placeholder="اكتب سؤالك هنا..." rows="1"></textarea>
+            <button class="send-btn" id="sendBtn" onclick="sendMsg()">➤</button>
+          </div>
+        </div>
+
+        <!-- CHAT SIDEBAR -->
+        <div class="chat-sidebar">
+          <div class="cs-card">
+            <div class="cs-title">🔑 حالة الـ API</div>
+            <div id="apiStatusBadge" class="api-status-badge api-no">جارٍ الفحص...</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:8px;line-height:1.6;">المفتاح محفوظ في <code style="color:var(--acc2);">config.js</code></div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-title">💡 أسئلة مقترحة</div>
+            <button class="suggest-btn" onclick="suggest(this)">اشرح Cloud Computing ببساطة</button>
+            <button class="suggest-btn" onclick="suggest(this)">ما الفرق بين HTML وCSS؟</button>
+            <button class="suggest-btn" onclick="suggest(this)">كيف أبدأ تعلم Data Mining؟</button>
+            <button class="suggest-btn" onclick="suggest(this)">أهم مهارات الـ IoT؟</button>
+            <button class="suggest-btn" onclick="suggest(this)">اشرح Big O Notation</button>
+            <button class="suggest-btn" onclick="suggest(this)">نصائح لتحسين درجاتي</button>
+          </div>
+          <div class="cs-card">
+            <button class="clear-btn" onclick="clearChat()">🗑️ مسح المحادثة</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+<script src="config.js"></script>
+<script src="data/students.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
